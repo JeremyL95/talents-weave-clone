@@ -28,6 +28,15 @@ body {
     margin: 0 auto;
 }
 
+section {
+    padding-block: 5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-inline: 1rem;
+    position: relative;
+}
+
 #hero {
     height: 90dvh;
     background-color: var(--hero-bg);
@@ -66,22 +75,6 @@ body {
             justify-content: space-between;
             align-items: center;
             margin-top: 2rem;
-
-            button {
-                font-size: 1.125rem;
-                font-weight: 700;
-                color: var(--secondary-text);
-                padding: 20px 30px;
-                border: none;
-                border-radius: 8px;
-                background-image: linear-gradient(
-                    to right,
-                    var(--accent-color) 0%,
-                    var(--gradient-color) 50%,
-                    var(--accent-color) 100%
-                );
-                background-size: 200% auto;
-            }
 
             .hero-employees-container {
                 display: flex;
@@ -135,6 +128,151 @@ body {
     }
 }
 
+#aboutUs {
+    width: 100%;
+    background-color: #fff;
+    overflow: hidden;
+
+    .left-col {
+        width: 50%;
+
+        .left-col-image-container {
+            position: relative;
+
+            .left-col-label-one {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 0.75rem;
+                padding: 1rem;
+                background-color: var(--hero-bubble-bg);
+                border: 1px solid var(--hero-bubble-border);
+                border-radius: 17px;
+                position: absolute;
+                right: 20%;
+                bottom: 32%;
+
+                .label-text div {
+                    margin-top: 0.25rem;
+                    color: var(--hero-bubble-text);
+                }
+            }
+        }
+    }
+
+    .right-col {
+        width: 50%;
+        .about-us-label {
+            color: var(--highlighted-text);
+        }
+
+        .about-us-title {
+            font-size: 3rem;
+            margin-block: 1rem;
+
+            .about-us__highlighted {
+                color: var(--highlighted-text);
+            }
+        }
+
+        .about-us-description {
+            margin-top: 2rem;
+            color: var(--hero-description);
+            line-height: 1.5;
+        }
+    }
+
+    .backdrop-one {
+        position: absolute;
+        right: -10%;
+        bottom: -20%;
+    }
+
+    .btn-apply {
+        margin-top: 2rem;
+    }
+}
+
+#whyChooseUs {
+    width: 100%;
+    background-color: var(--hero-bg);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-inline: 1rem;
+    position: relative;
+    overflow: hidden;
+
+    .left-col {
+        width: 50%;
+
+        .left-col-image-container {
+            position: relative;
+
+            .left-col-label-one {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 0.75rem;
+                padding: 1rem;
+                background-color: var(--hero-bubble-bg);
+                border: 1px solid var(--hero-bubble-border);
+                border-radius: 17px;
+                position: absolute;
+                right: 20%;
+                bottom: 32%;
+
+                .label-text div {
+                    margin-top: 0.25rem;
+                    color: var(--hero-bubble-text);
+                }
+            }
+        }
+    }
+
+    .right-col {
+        width: 50%;
+        .about-us-label {
+            color: var(--highlighted-text);
+        }
+
+        .about-us-title {
+            font-size: 3rem;
+            margin-block: 1rem;
+
+            .about-us__highlighted {
+                color: var(--highlighted-text);
+            }
+        }
+
+        .about-us-description {
+            margin-top: 2rem;
+            color: var(--hero-description);
+            line-height: 1.5;
+        }
+    }
+
+    .btn-apply {
+        margin-top: 2rem;
+    }
+}
+
+.btn-apply {
+    font-size: 1.125rem;
+    font-weight: 700;
+    color: var(--secondary-text);
+    padding: 15px 30px;
+    border: none;
+    border-radius: 8px;
+    background-image: linear-gradient(
+        to right,
+        var(--accent-color) 0%,
+        var(--gradient-color) 50%,
+        var(--accent-color) 100%
+    );
+    background-size: 200% auto;
+}
+
 .nav-logo {
     img {
         width: 200px;
@@ -150,6 +288,7 @@ body {
     .nav-links {
         display: flex;
         gap: 2rem;
+        margin-bottom: 0;
 
         .nav-link {
             list-style-type: none;
