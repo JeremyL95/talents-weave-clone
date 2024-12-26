@@ -38,33 +38,32 @@ section {
     position: relative;
 }
 
+.section-label {
+    font-size: 1rem;
+    color: var(--highlighted-text);
+}
+
 .section-title {
     font-weight: 700;
+
+    font-size: 3.5rem;
+    margin-block: 1rem;
+
+    .section-title__highlighted {
+        color: var(--highlighted-text);
+    }
+}
+
+.section-description {
+    margin-block: 2rem 0rem;
+    color: var(--hero-description);
+    line-height: 1.5;
 }
 
 #hero {
     background-color: var(--hero-bg);
 
     .left-col {
-        .hero-label {
-            color: var(--highlighted-text);
-        }
-
-        .hero-title {
-            font-size: 3.5rem;
-            margin-block: 1rem;
-
-            .hero-title__highlighted {
-                color: var(--highlighted-text);
-            }
-        }
-
-        .hero-description {
-            margin-top: 2rem;
-            color: var(--hero-description);
-            line-height: 1.5;
-        }
-
         .hero-cta-container {
             max-width: 520px;
             display: flex;
@@ -154,36 +153,11 @@ section {
         }
     }
 
-    .right-col {
-        .about-us-label {
-            font-size: 1rem;
-            color: var(--highlighted-text);
-        }
-
-        .about-us-title {
-            font-size: 3rem;
-            margin-block: 1rem;
-
-            .about-us__highlighted {
-                color: var(--highlighted-text);
-            }
-        }
-
-        .about-us-description {
-            margin-top: 2rem;
-            color: var(--hero-description);
-            line-height: 1.5;
-        }
-    }
-
     .backdrop-one {
+        display: none;
         position: absolute;
         right: -10%;
         bottom: -20%;
-    }
-
-    .btn-apply {
-        margin-top: 2rem;
     }
 }
 
@@ -245,10 +219,6 @@ section {
             line-height: 1.5;
         }
     }
-
-    .btn-apply {
-        margin-top: 2rem;
-    }
 }
 
 .btn-apply {
@@ -265,6 +235,7 @@ section {
         var(--accent-color) 100%
     );
     background-size: 200% auto;
+    margin-block: 1rem;
 }
 
 /* start of navbar */
@@ -307,16 +278,25 @@ section {
         padding-block: 3.125rem;
     }
 
+    .section-title {
+        font-size: 1.875rem;
+    }
+
+    .hero-title {
+        font-size: 2.25rem;
+    }
+
+    .section-label {
+        font-size: 1rem;
+    }
+
     #hero {
         .left-col {
-            .hero-label {
-                font-size: 1rem;
-            }
-            .hero-title {
-                font-size: 2.25rem;
-            }
-
             .hero-cta-container {
+                align-items: flex-start;
+                flex-direction: column;
+                margin-top: unset;
+
                 .hero-employees-container {
                     img {
                         width: 160px;
@@ -351,15 +331,6 @@ section {
         border: none;
     }
 
-    .hero-cta-container {
-        align-items: flex-start !important;
-        flex-direction: column;
-
-        .btn-apply {
-            margin-bottom: 2rem;
-        }
-    }
-
     .btn-apply {
         font-size: 1rem;
         padding-inline: 25px;
@@ -368,15 +339,6 @@ section {
     #aboutUs {
         .left-col-image-container img {
             width: 100%;
-        }
-        .right-col {
-            .about-us-title {
-                font-size: 1.875rem;
-            }
-
-            .about-us-label {
-                font-size: 1rem;
-            }
         }
     }
 }
