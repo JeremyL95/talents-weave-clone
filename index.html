@@ -11,6 +11,7 @@
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -261,19 +262,61 @@
     </section>
 
     <!-- our team -->
-    <!-- <section id="ourTeam">
+    <section id="ourTeam" class="row mx-0">
+        <div class="col-12 our-team-content">
+            <h4 class="section-label">Our Team</h4>
 
-    </section> -->
+            <h2 class="section-title">
+                The Driving Force <span class="section-title__highlighted">Behind Success</span>
+            </h2>
+
+            <p class="section-description">
+                Our team is the heart of everything we do. Comprised of passionate professionals dedicated to creating a
+                seamless remote work experience, we work together to connect talent with opportunity.
+            </p>
+        </div>
+
+        <div id="teams" class="row mx-0 py-5">
+
+        </div>
+    </section>
 
     <!-- testimonials -->
-    <!-- <section id="testimonials">
+    <section id="testimonials" class="row mx-0">
+        <div class="col-12 testimonials-content">
+            <h4 class="section-label">Testimonials</h4>
 
-    </section> -->
+            <h2 class="section-title">
+                What our happy <span class="section-title__highlighted">employees say.</span>
+            </h2>
+
+            <p class="section-description">
+                Our employees are at the heart of our success. Hear firsthand experiences from our team about what it’s
+                like to work in a dynamic, flexible, and supportive remote environment
+            </p>
+        </div>
+
+        <div id="testimonialCarousel" class="testimonial-carousel-container">
+            <div class="testimonial-carousel-slider-container swiper">
+                <ul id="slider" class="testimonial-carousel-slider swiper-wrapper">
+
+                </ul>
+            </div>
+
+            <div class="testimonial-carousel-button">
+                <button class="btn-prev">
+                    <i class="fa-solid fa-arrow-left"></i>
+                </button>
+                <button class="btn-next">
+                    <i class="fa-solid fa-arrow-right"></i>
+                </button>
+            </div>
+        </div>
+    </section>
 
     <!-- footer -->
     <footer id="footer">
         <p id="copyright"></p>
-
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
@@ -282,6 +325,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
         integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
         crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script type="module" src="./public/data/data.js"></script>
     <script type="module" src="app.js"></script>
 </body>

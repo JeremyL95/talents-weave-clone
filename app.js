@@ -1,8 +1,10 @@
-import { advantages, progressBar, careerPackages } from './public/data/data.js';
+import { advantages, progressBar, careerPackages, ourTeams, testimonials } from './public/data/data.js';
 
 let advantageContainer = ``;
 let progressBarContainer = ``;
 let careerPackagesContainer = ``;
+let ourTeamContainer = ``;
+let testimonialSliderContainer = ``;
 
 // advantages card
 advantages.forEach((advantage) => {
@@ -95,6 +97,87 @@ careerPackages.forEach((careerPackage) => {
             </div>`
 });
 document.getElementById('careerCards').innerHTML = careerPackagesContainer;
+
+// our team
+ourTeams.forEach((ourTeam) => {
+    let imageDisplay = `url('${ourTeam.image}')`;
+
+    ourTeamContainer += `
+        <div id="team${ourTeam.id}" class="team-container col-12 col-md-4" style="background-image: ${imageDisplay}">
+            <div class="team-content">
+                <h4 class="team-name">
+                    ${ourTeam.name}
+                </h4>
+
+                <div class="team-position">
+                    ${ourTeam.position}
+                </div>
+            </div>
+        </div>`
+});
+document.getElementById('teams').innerHTML = ourTeamContainer;
+
+//testimonial carousel
+testimonials.forEach((testimonial) => {
+    testimonialSliderContainer += `
+         <li class="carousel-card swiper-slide">
+            <div class="carousel-image">
+                <img src="${testimonial.image}" alt="">
+            </div>
+
+            <ul class="testimonial-ratings">`
+
+    for (let i = 0; i < testimonial.rating; i++) {
+        testimonialSliderContainer +=
+            `<li>
+                <i class="fa-solid fa-star"></i>
+            </li>`
+    }
+
+    for (let i = 0; i < testimonial.empty_rating; i++) {
+        testimonialSliderContainer +=
+            `<li>
+                <i class="fa-regular fa-star"></i>
+            </li>`
+    }
+
+    testimonialSliderContainer += `</ul>
+            <p class="testimonial-feedback">
+                ${testimonial.feedback}
+            </p>
+
+            <hr>
+
+            <h3 class="testimonial-name">
+                ${testimonial.name}
+            </h3>
+        </li>
+    `
+})
+document.getElementById('slider').innerHTML = testimonialSliderContainer;
+
+new Swiper('.swiper', {
+    loop: true,
+    slidesPerView: 1,
+    spaceBetween: 10,
+
+    breakpoints: {
+        768: {
+            slidesPerView: 2,
+            spaceBetween: 20
+        },
+
+        992: {
+            slidesPerView: 3,
+            spaceBetween: 30
+        }
+    },
+
+    navigation: {
+        nextEl: '.btn-next',
+        prevEl: '.btn-prev',
+    }
+});
 
 // footer
 const currentYear = new Date().getFullYear();

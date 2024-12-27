@@ -107,3 +107,72 @@ export const careerPackages = [
         recommended: 0
     },
 ]
+
+export const ourTeams = [
+    {
+        id: 1,
+        name: 'Yasser Kanani',
+        position: 'CEO and Founder',
+        image: './public/assets/team-1.webp'
+    },
+    {
+        id: 2,
+        name: 'Retal Bader',
+        position: 'Vice President',
+        image: './public/assets/team-2.webp'
+    },
+    {
+        id: 3,
+        name: 'Abdulaziz Al-Thakir',
+        position: 'Manager',
+        image: './public/assets/team-3.webp'
+    }
+]
+
+export const testimonials = [
+    {
+        id: 1,
+        name: 'Hamed',
+        image: './public/assets/testimonial-avatar-1.webp',
+        rating: 4,
+        empty_rating: 1,
+        max_rating: 5,
+        feedback: 'Working at Talents Weave has been an incredible experience. The flexibility to work remotely and the supportive culture make it easy to balance my career and personal life. It\'s a company that truly values its employees!'
+    },
+    {
+        id: 2,
+        name: 'Saja',
+        image: './public/assets/testimonial-avatar-2.webp',
+        rating: 5,
+        empty_rating: 0,
+        max_rating: 5,
+        feedback: 'Talents Weave gave me the opportunity to grow professionally and personally. The team is collaborative, the leadership is transparent, and there\'s always room for innovation. I couldn\'t ask for a better work environment!'
+    },
+    {
+        id: 3,
+        name: 'Russell',
+        image: './public/assets/testimonial-avatar-3.webp',
+        rating: 5,
+        empty_rating: 0,
+        max_rating: 5,
+        feedback: 'I love how Talents Weave promotes a strong work-life balance. The remote setup allows me to manage my time effectively while still being part of an amazing team that supports each other every step of the way.'
+    },
+    {
+        id: 4,
+        name: 'Elsie',
+        image: './public/assets/testimonial-avatar-4.webp',
+        rating: 4,
+        empty_rating: 1,
+        max_rating: 5,
+        feedback: 'Joining Talents Weave was one of the best career decisions I\'ve made. The company offers a great mix of challenging work and a positive culture. Plus, the remote work opportunities make it easy to work from anywhere!'
+    },
+    {
+        id: 5,
+        name: 'Bilal',
+        image: './public/assets/testimonial-avatar-5.webp',
+        rating: 5,
+        empty_rating: 0,
+        max_rating: 5,
+        feedback: 'Talents Weave provides a fantastic platform for both career development and personal growth. The team is diverse, the work is engaging, and I appreciate the company\'s commitment to employee well-being and flexible working hours.'
+    },
+]

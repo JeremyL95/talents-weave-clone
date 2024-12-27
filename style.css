@@ -16,6 +16,7 @@
     --highlighted-text: #ff4438;
     --accent-color: #ff4438;
     --gradient-color: #ffbe36;
+    --primary-color: #0e0d1b;
 }
 
 * {
@@ -26,7 +27,7 @@
 }
 
 body {
-    max-width: 1400px;
+    max-width: 1500px;
     margin: 0 auto;
 }
 
@@ -110,6 +111,7 @@ section {
             }
 
             .right-col-label-one {
+                display: none;
                 top: 15%;
                 right: -40%;
             }
@@ -381,7 +383,7 @@ section {
 
     .career-card.recommended {
         position: relative;
-        background-color: #0e0d1b;
+        background-color: var(--primary-color);
         overflow: hidden;
 
         .recommend-package {
@@ -422,6 +424,147 @@ section {
     }
 }
 /* End of careers */
+
+/* Start of our teams */
+#ourTeam {
+    background-color: var(--hero-bubble-bg);
+
+    .our-team-content {
+        max-width: 900px;
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    #teams {
+        display: flex;
+        justify-content: center;
+        margin-inline: 0;
+        gap: 1rem;
+    }
+
+    .team-container {
+        width: 350px;
+        height: 420px;
+        position: relative;
+        margin-block: 1rem;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        border-radius: 17px;
+        object-fit: contain;
+        transition: all 0.25 ease-in;
+
+        .team-content {
+            /* width: 300px; */
+            position: absolute;
+            bottom: -30%;
+            margin: 1rem;
+            padding: 1rem;
+            border-radius: 10px;
+            color: var(--secondary-text);
+            background-color: var(--primary-color);
+            opacity: 0%;
+            z-index: 99;
+
+            .team-name {
+                font-size: 1.25rem;
+            }
+
+            .team-title {
+                font-size: 1rem;
+            }
+        }
+
+        &:hover {
+            .team-content {
+                bottom: 0%;
+                opacity: 90%;
+            }
+        }
+    }
+}
+/* End of our teams */
+
+/* Start of testimonials */
+#testimonials {
+    background-color: var(--hero-bg);
+
+    .testimonials-content {
+        max-width: 1000px;
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    .swiper {
+        max-width: 100%;
+    }
+
+    .testimonial-carousel-container {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+
+        .testimonial-carousel-slider {
+            margin-block: 2rem;
+            padding-left: 0;
+
+            .carousel-card {
+                background-color: var(--hero-bubble-bg);
+                border: 1px solid var(--hero-bubble-border);
+                padding: 1rem;
+                border-radius: 20px;
+
+                .carousel-image img {
+                    border-radius: 50%;
+                    width: 20%;
+                    height: 20%;
+                }
+
+                .testimonial-ratings {
+                    display: flex;
+                    gap: 0.25rem;
+                    list-style-type: none;
+                    padding-left: 0;
+                    margin-block: 1rem;
+
+                    .fa-solid.fa-star,
+                    .fa-regular.fa-star {
+                        color: var(--accent-color);
+                    }
+                }
+
+                .testimonial-feedback {
+                    font-size: 1rem;
+                    color: var(--default-text);
+                }
+
+                .testimonial-name {
+                    font-size: 1.25rem;
+                    font-weight: 700;
+                }
+            }
+        }
+
+        .testimonial-carousel-button {
+            display: flex;
+            gap: 1rem;
+
+            .btn-prev,
+            .btn-next {
+                width: 40px;
+                height: 40px;
+                border: none;
+                border-radius: 50%;
+                background-color: var(--accent-color);
+
+                i {
+                    color: var(--secondary-text);
+                }
+            }
+        }
+    }
+}
+/* End of testimonials */
 
 .btn-apply {
     font-size: 1.125rem;
