@@ -10,6 +10,7 @@
 
     --nav-link-color: #ff4438;
 
+    --default-text: #757575;
     --primary-text: #000;
     --secondary-text: #fff;
     --highlighted-text: #ff4438;
@@ -45,13 +46,16 @@ section {
 
 .section-title {
     font-weight: 700;
-
-    font-size: 3.5rem;
+    font-size: 3rem;
     margin-block: 1rem;
 
     .section-title__highlighted {
         color: var(--highlighted-text);
     }
+}
+
+.hero-title {
+    font-size: 3.5rem;
 }
 
 .section-description {
@@ -162,64 +166,262 @@ section {
 }
 
 #whyChooseUs {
-    width: 100%;
     background-color: var(--hero-bg);
+
+    .advantages-container {
+        width: 100%;
+        display: grid;
+        gap: 1rem;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .advantage {
+        width: 100%;
+        background-color: var(--hero-bubble-bg);
+        border: 1px solid var(--hero-bubble-border);
+        border-radius: 15px;
+        padding: 20px;
+    }
+
+    .advantage:hover {
+        background-image: linear-gradient(180deg, var(--accent-color) 0%, var(--gradient-color) 100%);
+
+        .advantage-icon {
+            filter: brightness(0) invert(1);
+        }
+
+        .advantage-title,
+        .advantage-description {
+            color: var(--secondary-text);
+        }
+    }
+
+    .advantage-icon {
+        width: 48px;
+        height: 48px;
+    }
+
+    .advantage-title {
+        font-size: 1.125rem;
+        margin-block: 1rem;
+    }
+
+    .advantage-description {
+        font-size: 1rem;
+        color: var(--default-text);
+    }
+}
+
+/* Start of progress bar */
+.combined-image-container {
+    position: relative;
+    height: 400px;
+    padding-inline: 1rem;
+
+    .combined-image {
+        position: absolute;
+    }
+
+    .combined-image img {
+        width: 100%;
+        height: 250px;
+        border-radius: 20px;
+        object-fit: contain;
+    }
+
+    .combined-image-1 {
+        z-index: 99;
+        left: 0;
+    }
+
+    .combined-image-2 {
+        padding-left: 6rem;
+        z-index: 98;
+    }
+
+    .combined-image-3 {
+        padding-top: 2rem;
+        z-index: 99;
+        right: 0;
+    }
+}
+
+.progress-bar-wrapper {
+    background-color: var(--hero-bubble-bg);
+}
+
+.progress-bar-container {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding-inline: 1rem;
-    position: relative;
-    overflow: hidden;
+    gap: 1rem;
+    color: #000;
+    padding: 2rem;
+    background-color: white;
+    border: 1px solid var(--hero-bubble-border);
+    border-radius: 17px;
+    margin-block: 1rem;
 
-    .left-col {
-        width: 50%;
+    .progress-bar-icon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 1rem;
+        border: 1px solid var(--hero-bubble-border);
+        border-radius: 50%;
+    }
 
-        .left-col-image-container {
-            position: relative;
+    .progress-bar-top {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1rem;
+    }
 
-            .left-col-label-one {
+    .progress-bar-title {
+        font-size: 1.25rem;
+        text-transform: capitalize;
+        margin-bottom: 0;
+    }
+
+    .progress-bar-percentage {
+        font-size: 1rem;
+        font-weight: 500;
+        color: var(--accent-color);
+    }
+
+    .progress-bar {
+        width: 100%;
+        height: 12px;
+        background-color: #e6e6e6;
+        border-radius: 20px;
+        margin-top: 0.75rem;
+
+        .progress-bar-inner {
+            height: inherit;
+            background-image: linear-gradient(180deg, var(--accent-color) 0%, var(--gradient-color) 100%);
+            border-radius: 20px;
+        }
+    }
+}
+
+.progress-bar-container:hover {
+    .progress-bar-icon {
+        background-image: linear-gradient(180deg, var(--accent-color) 0%, var(--gradient-color) 100%);
+    }
+}
+/* End of progress bar */
+
+/* Start of careers */
+#careers {
+    background-color: var(--hero-bg);
+
+    .career-content {
+        max-width: 700px;
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    .career-card-container {
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+        margin-inline: 0;
+    }
+
+    .career-card {
+        background-color: var(--hero-bubble-bg);
+        padding: 2rem 1rem;
+        border-radius: 16px;
+        max-width: 380px;
+
+        .recommend-package {
+            display: none;
+        }
+
+        .career-image img {
+            margin-block: 1rem;
+            width: 100%;
+            border-radius: 20px;
+            min-height: 220px;
+            object-fit: cover;
+        }
+
+        h2 {
+            font-weight: 700;
+            font-size: 1.75rem;
+        }
+
+        h3 {
+            font-size: 1.25rem;
+        }
+
+        p {
+            color: var(--default-text);
+            text-align: center;
+        }
+
+        ul {
+            list-style-type: none;
+            padding-left: 0;
+
+            li {
                 display: flex;
                 align-items: center;
-                justify-content: center;
-                gap: 0.75rem;
-                padding: 1rem;
-                background-color: var(--hero-bubble-bg);
-                border: 1px solid var(--hero-bubble-border);
-                border-radius: 17px;
-                position: absolute;
-                right: 20%;
-                bottom: 32%;
+                justify-content: space-between;
+                color: var(--default-text);
+                font-weight: 500;
 
-                .label-text div {
-                    margin-top: 0.25rem;
-                    color: var(--hero-bubble-text);
+                .fa-check {
+                    color: #55b559;
                 }
             }
         }
     }
 
-    .right-col {
-        width: 50%;
-        .about-us-label {
-            color: var(--highlighted-text);
+    .career-card.recommended {
+        position: relative;
+        background-color: #0e0d1b;
+        overflow: hidden;
+
+        .recommend-package {
+            content: "";
+            display: block;
+            position: absolute;
+            top: -60px;
+            right: -60px;
+            transform: rotate(45deg);
+            background: linear-gradient(
+                to right,
+                var(--accent-color) 35%,
+                var(--gradient-color) 2.05%,
+                var(--accent-color) 99.13%
+            );
+            background-position: right 50px top 60px;
+            width: 140px;
+            height: 100px;
+            z-index: 1;
         }
 
-        .about-us-title {
-            font-size: 3rem;
-            margin-block: 1rem;
+        h2,
+        h3,
+        p,
+        hr {
+            color: var(--secondary-text);
+        }
 
-            .about-us__highlighted {
-                color: var(--highlighted-text);
+        ul {
+            li {
+                color: var(--secondary-text);
+
+                .fa-check {
+                    color: #55b559;
+                }
             }
-        }
-
-        .about-us-description {
-            margin-top: 2rem;
-            color: var(--hero-description);
-            line-height: 1.5;
         }
     }
 }
+/* End of careers */
 
 .btn-apply {
     font-size: 1.125rem;
@@ -235,7 +437,7 @@ section {
         var(--accent-color) 100%
     );
     background-size: 200% auto;
-    margin-block: 1rem;
+    margin-block: 2rem;
 }
 
 /* start of navbar */
@@ -270,7 +472,6 @@ section {
 .navbar-light .navbar-nav .nav-link {
     color: var(--nav-link-color);
 }
-
 /* end of navbar */
 
 @media only screen and (max-width: 767px) {
@@ -339,6 +540,20 @@ section {
     #aboutUs {
         .left-col-image-container img {
             width: 100%;
+        }
+    }
+
+    #whyChooseUs {
+        .advantages-container {
+            grid-template-columns: unset;
+        }
+    }
+
+    .progress-bar-container {
+        padding: 1rem;
+
+        .progress-bar-title {
+            font-size: 1.125rem;
         }
     }
 }

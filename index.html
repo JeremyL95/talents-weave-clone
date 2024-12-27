@@ -194,8 +194,8 @@
     </section>
 
     <!-- why choose us -->
-    <section id="whyChooseUs">
-        <div class="left-col">
+    <section id="whyChooseUs" class="row mx-0">
+        <div class="col-12 col-md-4 left-col">
             <h4 class="section-label">Why Choose Us</h4>
 
             <h2 class="section-title">
@@ -214,25 +214,61 @@
             </div>
         </div>
 
-        <div class="right-col">
-            <div id="advantages"></div>
+        <div class="col-12 col-md-8 right-col">
+            <div id="advantages" class="advantages-container">
+
+            </div>
+        </div>
+    </section>
+
+    <section class="row mx-0">
+        <div class="col-12 col-md-6 combined-image-container">
+            <div class="combined-image combined-image-1">
+                <img src="./public/assets/wcm-1.webp" alt="">
+            </div>
+            <div class="combined-image combined-image-2">
+                <img src="./public/assets/wcm-2.webp" alt="">
+            </div>
+            <div class="combined-image combined-image-3">
+                <img src="./public/assets/wcm-3.webp" alt="">
+            </div>
+        </div>
+
+        <div id="progressBarContainer" class="col-12 col-md-6 progress-bar-wrapper">
+
         </div>
     </section>
 
     <!-- careers -->
-    <section id="careers">
+    <section id="careers" class="row mx-0">
+        <div class="col-12 career-content">
+            <h4 class="section-label">Our Careers</h4>
 
+            <h2 class="section-title">
+                Explore Our Exciting <br /> <span class="section-title__highlighted">Remote Career Opportunities</span>
+            </h2>
+
+            <p class="section-description">
+                Discover a range of exciting career opportunities at Talents Weave. Whether you’re looking to start a
+                new career or advance your existing one, explore our current openings and find the perfect role to match
+                your skills and aspirations.
+            </p>
+        </div>
+
+        <div id="careerCards" class="career-card-container row py-5">
+
+        </div>
     </section>
 
     <!-- our team -->
-    <section id="ourTeam">
+    <!-- <section id="ourTeam">
 
-    </section>
+    </section> -->
 
     <!-- testimonials -->
-    <section id="testimonials">
+    <!-- <section id="testimonials">
 
-    </section>
+    </section> -->
 
     <!-- footer -->
     <footer id="footer">
@@ -246,7 +282,8 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
         integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
         crossorigin="anonymous"></script>
-    <script src="app.js"></script>
+    <script type="module" src="./public/data/data.js"></script>
+    <script type="module" src="app.js"></script>
 </body>
 
 </html>
