@@ -5,6 +5,7 @@ let progressBarContainer = ``;
 let careerPackagesContainer = ``;
 let ourTeamContainer = ``;
 let testimonialSliderContainer = ``;
+const btnApply = document.querySelectorAll(".btn-apply");
 
 // advantages card
 advantages.forEach((advantage) => {
@@ -103,7 +104,7 @@ ourTeams.forEach((ourTeam) => {
     let imageDisplay = `url('${ourTeam.image}')`;
 
     ourTeamContainer += `
-        <div id="team${ourTeam.id}" class="team-container col-12 col-md-4" style="background-image: ${imageDisplay}">
+        <div id="team${ourTeam.id}" class="team-container col-12 col-md-6 col-lg-4" style="background-image: ${imageDisplay}">
             <div class="team-content">
                 <h4 class="team-name">
                     ${ourTeam.name}
@@ -178,6 +179,16 @@ new Swiper('.swiper', {
         prevEl: '.btn-prev',
     }
 });
+
+for (let i = 0; i < btnApply.length; i++) {
+    btnApply[i].addEventListener("click", () => {
+        location.href = 'application-form.html';
+    });
+}
+
+function applyNow() {
+    location.href = 'application-form.html';
+}
 
 // footer
 const currentYear = new Date().getFullYear();

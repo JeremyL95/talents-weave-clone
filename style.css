@@ -92,6 +92,8 @@ ul {
     .right-col {
         .right-col-image-container {
             position: relative;
+            display: flex;
+            justify-content: center;
 
             .right-col-label-container {
                 display: flex;
@@ -108,24 +110,30 @@ ul {
                     font-size: 1.5rem;
                     color: #ff4438;
                 }
-
-                .label-text div {
-                    margin-top: 0.25rem;
-                    color: var(--hero-bubble-text);
-                }
             }
 
             .right-col-label-one {
-                display: none;
                 top: 15%;
-                right: -40%;
+                right: 10%;
             }
 
             .right-col-label-two {
                 bottom: 30%;
-                left: -40%;
+                left: 20%;
             }
         }
+    }
+}
+
+.label-text {
+    h3 {
+        font-size: 1.125rem;
+        margin-bottom: 0;
+    }
+
+    div {
+        margin-top: 0.25rem;
+        color: var(--hero-bubble-text);
     }
 }
 
@@ -149,7 +157,7 @@ ul {
                 border: 1px solid var(--hero-bubble-border);
                 border-radius: 17px;
                 position: absolute;
-                right: 20%;
+                right: 30%;
                 bottom: 32%;
 
                 .label-text div {
@@ -222,7 +230,7 @@ ul {
 /* Start of progress bar */
 .combined-image-container {
     position: relative;
-    height: 400px;
+    height: 320px;
     padding-inline: 1rem;
 
     .combined-image {
@@ -672,6 +680,16 @@ ul {
 .navbar-light .navbar-nav .nav-link.active,
 .navbar-light .navbar-nav .nav-link {
     color: var(--nav-link-color);
+    margin-inline: 0.5rem;
+}
+
+.navbar-collapse {
+    justify-content: flex-end;
+}
+
+.dropdown-menu[data-bs-popper] {
+    left: unset;
+    right: 0;
 }
 /* end of navbar */
 
@@ -709,16 +727,16 @@ ul {
 
         .right-col {
             .right-col-image-container {
-                display: flex;
-                justify-content: center;
+                /* display: flex;
+                justify-content: center; */
 
                 img {
                     width: 200px;
                 }
 
                 .right-col-label-one {
-                    top: 35%;
-                    right: 5%;
+                    top: 40%;
+                    right: -5%;
                 }
 
                 .right-col-label-two {
@@ -731,6 +749,11 @@ ul {
 
     .dropdown-menu {
         border: none;
+        color: var(--accent-color);
+    }
+
+    .dropdown-item {
+        color: var(--accent-color);
     }
 
     .btn-apply {

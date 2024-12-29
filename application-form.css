@@ -1,0 +1,170 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap");
+
+:root {
+    --default-text: #757575;
+    --primary-text: #000;
+    --secondary-text: #fff;
+    --form-paragraph: #808080;
+    --accent-color: #ff4438;
+    --input-border: #cacaca;
+    --input-border__focus: #49bf1f;
+    --input-border__invalid: #ff4d4f;
+    --whatsapp-color: #2ab200;
+    --country-dropdown-bg: #f1f1f1;
+}
+
+#applicationForm {
+    max-width: 900px;
+    margin: 0 auto;
+
+    .application-bg img {
+        width: 100%;
+        max-height: 400px;
+        object-fit: contain;
+    }
+
+    h3 {
+        font-size: 1.5rem;
+    }
+
+    p {
+        color: var(--form-paragraph);
+        font-size: 0.875rem;
+    }
+
+    .asterisk {
+        color: var(--accent-color);
+    }
+
+    .input-form label {
+        margin-top: 1rem;
+    }
+
+    .input-form input {
+        width: 100%;
+        font-size: 1rem;
+        padding: 0.5rem 1rem;
+        border-radius: 5px;
+        border: none;
+        border: 1px solid var(--input-border);
+        transition: all 0.2s;
+
+        :focus {
+            border-color: var(--input-border__focus) !important;
+        }
+    }
+
+    .select-box {
+        position: relative;
+        border: 1px solid var(--input-border);
+        border-radius: 5px;
+
+        input {
+            width: 100%;
+            padding: 0.5rem 1rem;
+            border: none;
+            outline: none;
+        }
+
+        .options {
+            display: none;
+            position: absolute;
+            background-color: var(--secondary-text);
+            z-index: 99;
+            margin-top: 0.15rem;
+            padding: 1rem 0.5rem;
+            box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+
+            ol {
+                margin: 0.5rem -0.5rem;
+                padding-left: 0;
+                list-style-type: none;
+                margin-bottom: 0;
+                max-height: 240px;
+                overflow-y: auto;
+
+                .option {
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    cursor: pointer;
+                    padding: 0.5rem 1rem;
+
+                    &:hover {
+                        background-color: var(--country-dropdown-bg);
+                    }
+
+                    .iconify {
+                        margin-right: 0.5rem;
+                    }
+
+                    &.hide {
+                        display: none;
+                    }
+                }
+            }
+
+            input {
+                background-color: var(--country-dropdown-bg);
+            }
+
+            &.active {
+                display: block;
+            }
+        }
+    }
+
+    .selected-option {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border-radius: 5px;
+
+        div {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 10rem;
+            padding: 0 1rem;
+            position: relative;
+            cursor: pointer;
+        }
+
+        .fa-caret-down {
+            transition: all 0.2s;
+            font-size: 0.75rem;
+
+            &.active {
+                transform: rotate(180deg);
+            }
+        }
+
+        input[type="tel"] {
+            border-radius: 0 5px 5px 0;
+        }
+    }
+
+    .btn-submit {
+        width: max-content;
+        display: flex;
+        align-items: center;
+        background-color: var(--whatsapp-color);
+        color: var(--secondary-text);
+        border-radius: 5px;
+        border: none;
+        padding: 0.5rem 1rem;
+
+        .fa-whatsapp {
+            color: var(--secondary-text);
+            margin-right: 0.5rem;
+        }
+    }
+}
+
+@media screen and (max-width: 767px) {
+    #applicationForm {
+        .selected-option div {
+            width: 6rem;
+        }
+    }
+}
