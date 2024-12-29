@@ -5,7 +5,11 @@ const selectBox = document.querySelector('.options'),
     caretIcon = document.querySelector('.fa-caret-down'),
     selectedOption = document.querySelector('.selected-option div'),
     dialCode = document.querySelector('.country-dialcode'),
-    phoneInput = document.querySelector('input[type="tel"]')
+    phoneInput = document.querySelector('input[type="tel"]'),
+    form = document.getElementById('form'),
+    nameInput = document.getElementById('name'),
+    emailInput = document.getElementById('email'),
+    nationalityInput = document.getElementById('nationality');
 
 let options = null;
 
@@ -60,9 +64,91 @@ function returnNumberOnly(el) {
     return el.target.value = el.target.value.replace(/[^0-9]/g, '');
 }
 
-phoneInput.addEventListener('input', returnNumberOnly)
+function returnStringOnly(el) {
+    return el.target.value = el.target.value.replace(/[^a-zA-Z]/g, '');
+}
+
+function validateForm(evt) {
+    evt.preventDefault();
+    validateUserInput();
+}
+
+function validateUserInput() {
+    const userNameValue = nameInput.value.trim(),
+        userEmailValue = emailInput.value.trim(),
+        userPhoneNumberValue = phoneInput.value.trim(),
+        userNationalityValue = nationalityInput.value.trim();
+
+    // name validation
+    if (userNameValue === "") {
+        setError(nameInput, 'Username is required');
+    } else {
+        setSuccess(nameInput);
+    }
+
+    // email validation
+    if (userEmailValue === "") {
+        setError(emailInput, 'Email is required');
+    } else if (!isValidEmail(userEmailValue)) {
+        setError(emailInput, 'Enter a valid email address');
+    } else {
+        setSuccess(emailInput);
+    }
+
+    // phone validation
+    if (userPhoneNumberValue === "") {
+        setError(phoneInput, 'Phone number is required');
+    } else {
+        setSuccess(phoneInput);
+    }
+
+    // nationality validation
+    if (userNationalityValue === "") {
+        setError(nationalityInput, 'Nationality is required');
+    } else {
+        setSuccess(nationalityInput)
+    }
+}
+
+function isValidEmail(email) {
+    const regex = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return regex.test(String(email).toLowerCase());
+}
+
+function setError(element, message) {
+    let inputControl, errorMessageDisplay;
+
+    if (element.id === 'phone') {
+        inputControl = element.closest('.custom-phone-dropdown');
+    } else {
+        inputControl = element.parentElement;
+    }
+
+    errorMessageDisplay = inputControl.querySelector('.error-message');
+    errorMessageDisplay.innerText = message;
+    inputControl.classList.add('error');
+}
+
+function setSuccess(element) {
+    let inputControl, errorMessageDisplay;
+
+    if (element.id === 'phone') {
+        inputControl = element.closest('.custom-phone-dropdown');
+    } else {
+        inputControl = element.parentElement;
+    }
+
+    errorMessageDisplay = inputControl.querySelector('.error-message');
+    errorMessageDisplay.innerText = "";
+    inputControl.classList.remove('error');
+}
+
+phoneInput.addEventListener('input', returnNumberOnly);
+nationalityInput.addEventListener('input', returnStringOnly);
 selectedOption.addEventListener('click', toggleDialCodeDropdown);
 searchBox.addEventListener('input', searchCountryByName);
+
+form.addEventListener('submit', validateForm);
 
 const currentYear = new Date().getFullYear();
 document.getElementById('copyright').innerText = `Copyright © ${currentYear} Talents Weave. All Rights Reserved.`

@@ -11,6 +11,9 @@
     --input-border__invalid: #ff4d4f;
     --whatsapp-color: #2ab200;
     --country-dropdown-bg: #f1f1f1;
+
+    --validation-success: #0f0;
+    --validation-error: #f00;
 }
 
 #applicationForm {
@@ -48,10 +51,15 @@
         border: none;
         border: 1px solid var(--input-border);
         transition: all 0.2s;
+    }
 
-        &:focus {
-            border-color: var(--input-border__focus) !important;
-        }
+    .error input,
+    .error .select-box {
+        border-color: var(--validation-error);
+    }
+
+    .error-message {
+        color: var(--validation-error);
     }
 
     .select-box {

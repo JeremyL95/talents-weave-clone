@@ -93,18 +93,20 @@
             we are unable to employ you.
         </p>
 
-        <form action="" method="" class="row input-form">
-            <label class="">
+        <form id="form" action="" method="post" name="myForm" class="row input-form">
+            <label>
                 <span class="asterisk">*</span> Name:
-                <input name="name" type="text" placeholder="Your Name">
+                <input id="name" name="name" type="text" placeholder="Your Name">
+                <div class="error-message"></div>
             </label>
 
             <label>
                 <span class="asterisk">*</span> Email:
-                <input name="email" type="email" placeholder="Your Email">
+                <input id="email" name="email" type="email" placeholder="Your Email">
+                <div class="error-message"></div>
             </label>
 
-            <label class="">
+            <label class="custom-phone-dropdown">
                 <span class="asterisk">*</span> KSA's Whatsapp Number:
 
                 <div class="select-box">
@@ -118,8 +120,9 @@
                                 +60
                             </span>
                         </div>
-                        <input type="tel" name="" id="" placeholder="Your Number">
+                        <input id="phone" type="tel" name="phone" placeholder="Your Number">
                     </div>
+
                     <div class="options">
                         <input type="text" class="search-box" placeholder="Search Country By Name">
 
@@ -128,6 +131,7 @@
                         </ol>
                     </div>
                 </div>
+                <div class="error-message"></div>
             </label>
 
             <label class="sub-label">
@@ -138,7 +142,9 @@
 
             <label>
                 <span class="asterisk">*</span> Nationality
-                <input name="nationality" type="text" placeholder="Your Nationality">
+                <input id="nationality" name="nationality" type="text" placeholder="Your Nationality">
+
+                <div class="error-message"></div>
             </label>
 
             <label class="sub-label">
