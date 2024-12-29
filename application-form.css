@@ -49,7 +49,7 @@
         border: 1px solid var(--input-border);
         transition: all 0.2s;
 
-        :focus {
+        &:focus {
             border-color: var(--input-border__focus) !important;
         }
     }
@@ -120,11 +120,11 @@
         justify-content: space-between;
         border-radius: 5px;
 
-        div {
+        .selected-dialcode {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            width: 10rem;
+            width: 8rem;
             padding: 0 1rem;
             position: relative;
             cursor: pointer;
@@ -163,8 +163,13 @@
 
 @media screen and (max-width: 767px) {
     #applicationForm {
-        .selected-option div {
+        .selected-option .selected-dialcode {
             width: 6rem;
         }
+    }
+
+    .input-form {
+        margin-inline: 0;
+        padding-inline: 0;
     }
 }

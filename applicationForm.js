@@ -3,7 +3,10 @@ import { countries } from './public/data/data.js'
 const selectBox = document.querySelector('.options'),
     searchBox = document.querySelector('.search-box'),
     caretIcon = document.querySelector('.fa-caret-down'),
-    selectedOption = document.querySelector('.selected-option div');
+    selectedOption = document.querySelector('.selected-option div'),
+    dialCode = document.querySelector('.country-dialcode'),
+    phoneInput = document.querySelector('input[type="tel"]')
+
 let options = null;
 
 countries.forEach((country, index) => {
@@ -27,7 +30,8 @@ function selectDialCode() {
     const currentIcon = this.querySelector('.iconify').cloneNode(true);
     const currentDialCode = this.querySelector('.dialcode');
 
-    document.querySelector('.current-icon').innerHTML = currentIcon;
+    dialCode.innerHTML = '';
+    dialCode.append(currentIcon);
     document.querySelector('.current-dialcode').innerText = currentDialCode.innerText;
 
     toggleDialCodeDropdown();
@@ -48,8 +52,15 @@ function searchCountryByName() {
 function toggleDialCodeDropdown() {
     selectBox.classList.toggle('active');
     caretIcon.classList.toggle('active');
+
+    searchBox.focus();
 }
 
+function returnNumberOnly(el) {
+    return el.target.value = el.target.value.replace(/[^0-9]/g, '');
+}
+
+phoneInput.addEventListener('input', returnNumberOnly)
 selectedOption.addEventListener('click', toggleDialCodeDropdown);
 searchBox.addEventListener('input', searchCountryByName);
 
