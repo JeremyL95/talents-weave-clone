@@ -3,31 +3,36 @@ export const advantages = [
         id: 1,
         icon: 'https://talentsweave.com/wp-content/uploads/2024/09/clock-eleven-thirty.svg',
         title: 'Flexible Working Hours',
-        description: 'Enjoy the freedom to create a work schedule that fits your life. Whether you\'re an early riser or a night owl, Talents Weave connects you with jobs that offer the flexibility to work when you\'re most productive.'
+        description: 'Enjoy the freedom to create a work schedule that fits your life. Whether you\'re an early riser or a night owl, Talents Weave connects you with jobs that offer the flexibility to work when you\'re most productive.',
+        duration: 500,
     },
     {
         id: 2,
         icon: './public/assets/balance.webp',
         title: 'High-Pay Salary',
-        description: 'We partner with companies that value your skills and expertise, offering competitive salaries that reflect your worth. Find roles that not only match your qualifications but also provide the financial rewards you deserve.'
+        description: 'We partner with companies that value your skills and expertise, offering competitive salaries that reflect your worth. Find roles that not only match your qualifications but also provide the financial rewards you deserve.',
+        duration: 500,
     },
     {
         id: 3,
         icon: './public/assets/money.webp',
         title: 'Work-Life Balance',
-        description: 'Say goodbye to long commutes and rigid office hours. Our remote opportunities allow you to maintain a healthy work-life balance, giving you more time to spend with family, pursue hobbies, or simply relax.'
+        description: 'Say goodbye to long commutes and rigid office hours. Our remote opportunities allow you to maintain a healthy work-life balance, giving you more time to spend with family, pursue hobbies, or simply relax.',
+        duration: 500,
     },
     {
         id: 4,
         icon: './public/assets/cost.webp',
         title: 'Cost Savings',
-        description: 'Working remotely means more savings on daily expenses like commuting, meals, and work attire. Talents Weave helps you maximize your earnings by connecting you with roles that eliminate unnecessary costs.'
+        description: 'Working remotely means more savings on daily expenses like commuting, meals, and work attire. Talents Weave helps you maximize your earnings by connecting you with roles that eliminate unnecessary costs.',
+        duration: 500,
     },
     {
         id: 5,
         icon: './public/assets/profit.webp',
         title: 'Personal Growth Opportunities',
-        description: 'Remote work opens doors to global opportunities, allowing you to collaborate with diverse teams and develop new skills. At Talents Weave, we’re committed to helping you grow both professionally and personally, paving the way for a fulfilling career.'
+        description: 'Remote work opens doors to global opportunities, allowing you to collaborate with diverse teams and develop new skills. At Talents Weave, we’re committed to helping you grow both professionally and personally, paving the way for a fulfilling career.',
+        duration: 500,
     },
 ]
 
@@ -71,7 +76,8 @@ export const careerPackages = [
             'Part Time or Full Time Available',
             'Online Training Provided'
         ],
-        recommended: 0
+        recommended: 0,
+        duration: 1000
     },
 
     {
@@ -88,7 +94,8 @@ export const careerPackages = [
             'Part Time or Full Time Available',
             'Online Training Provided'
         ],
-        recommended: 1
+        recommended: 1,
+        duration: 1500
     },
     {
         id: 3,
@@ -104,7 +111,8 @@ export const careerPackages = [
             'Part Time or Full Time Available',
             'Online Training Provided'
         ],
-        recommended: 0
+        recommended: 0,
+        duration: 2000
     },
 ]
 

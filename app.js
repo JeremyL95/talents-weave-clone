@@ -6,11 +6,12 @@ let careerPackagesContainer = ``;
 let ourTeamContainer = ``;
 let testimonialSliderContainer = ``;
 const btnApply = document.querySelectorAll(".btn-apply");
+const counters = document.querySelectorAll('.counter-value');
 
 // advantages card
 advantages.forEach((advantage) => {
     advantageContainer += `
-        <div id="${advantage.id}" class="advantage">
+        <div id="${advantage.id}" class="advantage" data-aos="fade-up" data-aos-duration="${advantage.duration}">
             <img src='${advantage.icon}' alt="icon"
                 class="advantage-icon">
 
@@ -42,7 +43,9 @@ progressBar.forEach((progressBar) => {
                     </h3>
 
                     <div class="progress-bar-percentage">
-                        ${progressBar.filled}%
+                        <span class="counter-value progressbar-value" data-speed="100" data-target="${progressBar.filled}">
+                            0
+                        </span> %
                     </div>
                 </div>
                 <div class="progress-bar">
@@ -53,9 +56,30 @@ progressBar.forEach((progressBar) => {
 });
 document.getElementById('progressBarContainer').innerHTML = progressBarContainer;
 
+const progressBarCounter = document.querySelectorAll('.progressbar-value');
+
+progressBarCounter.forEach(progressBarCounterNode => {
+    function counterAnim() {
+        const value = +progressBarCounterNode.getAttribute('data-target');
+        const speed = +progressBarCounterNode.getAttribute('data-speed');
+        const data = +progressBarCounterNode.innerText;
+        const time = value / speed;
+
+        if (data < value) {
+            progressBarCounterNode.innerText = Math.ceil(data + time);
+            setTimeout(counterAnim, 25);
+        }
+    }
+
+    counterAnim();
+})
+
+
+
 // career packages
 careerPackages.forEach((careerPackage) => {
-    careerPackagesContainer += `<div class="career-card col-12 col-md-4 my-2 ${careerPackage.recommended ? 'recommended' : ''}">
+    careerPackagesContainer += `<div class="career-card col-12 col-md-4 my-2 ${careerPackage.recommended ? 'recommended' : ''}"
+    data-aos="fade-up" data-aos-duration="${careerPackage.duration}">
                 <div class="recommend-package">
                 
                 </div>
@@ -128,10 +152,11 @@ document.getElementById('teams').innerHTML = ourTeamContainer;
 
 //testimonial carousel
 testimonials.forEach((testimonial) => {
+    let testimonialImageDisplay = `url('${testimonial.image}')`;
+
     testimonialSliderContainer += `
          <li class="carousel-card swiper-slide">
-            <div class="carousel-image">
-                <img src="${testimonial.image}" alt="">
+            <div class="carousel-image" style="background-image: ${testimonialImageDisplay}">
             </div>
 
             <ul class="testimonial-ratings">`
@@ -188,10 +213,43 @@ new Swiper('.swiper', {
     }
 });
 
+// counter animation
+counters.forEach(counter => {
+    function counterAnim() {
+        const value = +counter.getAttribute('data-target');
+        const speed = +counter.getAttribute('data-speed');
+        const data = +counter.innerText;
+        const time = value / speed;
+
+        if (data < value) {
+            counter.innerText = Math.ceil(data + time);
+
+            if (value <= 10) {
+                setTimeout(counterAnim, 200);
+            } else {
+                setTimeout(counterAnim, 1);
+            }
+        } else {
+            counter.innerText = numberWithCommas(value);
+        }
+
+    }
+
+    counterAnim();
+});
+
 for (let i = 0; i < btnApply.length; i++) {
     btnApply[i].addEventListener("click", applyNow);
 }
 
 function applyNow() {
     location.href = 'application-form.html';
+}
+
+function numberWithCommas(number) {
+    number = number.toString();
+    var pattern = /(-?\d+)(\d{3})/;
+    while (pattern.test(number))
+        number = number.replace(pattern, "$1,$2");
+    return number;
 }

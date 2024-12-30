@@ -24,6 +24,7 @@
     margin: 0;
     box-sizing: border-box;
     font-family: "DM Sans", "san-serif";
+    scroll-behavior: smooth;
 }
 
 body {
@@ -159,6 +160,8 @@ ul {
                 position: absolute;
                 right: 30%;
                 bottom: 32%;
+                animation: animated-bubble 2s infinite;
+                transition: animation 2s ease-in-out;
 
                 .label-text div {
                     margin-top: 0.25rem;
@@ -180,6 +183,19 @@ ul {
     }
 }
 
+@keyframes animated-bubble {
+    0% {
+        right: 30%;
+    }
+    50% {
+        right: 35%;
+    }
+
+    100% {
+        right: 30%;
+    }
+}
+
 #whyChooseUs {
     background-color: var(--hero-bg);
 
@@ -196,19 +212,39 @@ ul {
         border: 1px solid var(--hero-bubble-border);
         border-radius: 15px;
         padding: 20px;
+        position: relative;
+        overflow: hidden;
     }
 
     .advantage:hover {
-        background-image: linear-gradient(180deg, var(--accent-color) 0%, var(--gradient-color) 100%);
-
         .advantage-icon {
+            transition: all 0.5s ease-in-out;
             filter: brightness(0) invert(1);
         }
 
         .advantage-title,
         .advantage-description {
+            transition: all 0.5s ease-in-out;
             color: var(--secondary-text);
         }
+    }
+
+    .advantage::before {
+        position: absolute;
+        content: "";
+        top: 100%;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        -webkit-transition: all 0.5s;
+        transition: all 0.5s;
+        background-size: 101% 101%;
+        background-image: linear-gradient(180deg, var(--accent-color) 0%, var(--gradient-color) 100%);
+        z-index: -1;
+    }
+
+    .advantage:hover::before {
+        top: 0;
     }
 
     .advantage-icon {
@@ -219,6 +255,7 @@ ul {
     .advantage-title {
         font-size: 1.125rem;
         margin-block: 1rem;
+        font-weight: 700;
     }
 
     .advantage-description {
@@ -256,25 +293,42 @@ ul {
     margin-block: 1rem;
 
     .progress-bar-icon {
+        width: 60px;
+        height: 60px;
         display: flex;
         align-items: center;
         justify-content: center;
         padding: 1rem;
         border: 1px solid var(--hero-bubble-border);
         border-radius: 50%;
+        position: relative;
 
         .fa-customize {
+            position: absolute;
+            z-index: 99;
             color: var(--gradient-color);
+        }
+
+        &::after {
+            position: absolute;
+            content: "";
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            transform: scale(0);
+            transition: all 0.5s linear;
+            background-image: linear-gradient(180deg, var(--accent-color) 0%, var(--gradient-color) 100%);
         }
     }
 
     &:hover {
         .progress-bar-icon {
-            transition: all 0.6s linear;
-            background-image: linear-gradient(180deg, var(--accent-color) 0%, var(--gradient-color) 100%);
-
             .fa-customize {
                 color: var(--secondary-text);
+            }
+
+            &::after {
+                transform: scale(1);
             }
         }
     }
@@ -296,6 +350,8 @@ ul {
         font-size: 1rem;
         font-weight: 500;
         color: var(--accent-color);
+        display: flex;
+        align-items: center;
     }
 
     .progress-bar {
@@ -306,12 +362,21 @@ ul {
         margin-top: 0.75rem;
 
         .progress-bar-inner {
+            animation: progressBarAnim 3s ease-in-out;
+            animation-fill-mode: both;
             height: inherit;
             background-image: linear-gradient(180deg, var(--accent-color) 0%, var(--gradient-color) 100%);
             border-radius: 20px;
         }
     }
 }
+
+@keyframes progressBarAnim {
+    from {
+        width: 0;
+    }
+}
+
 /* End of progress bar */
 
 /* Start of careers */
@@ -527,10 +592,33 @@ ul {
                 padding: 1rem;
                 border-radius: 20px;
 
-                .carousel-image img {
+                .carousel-image {
                     border-radius: 50%;
-                    width: 20%;
-                    height: 20%;
+                    width: 60px;
+                    height: 60px;
+                    background-size: cover;
+                    background-repeat: no-repeat;
+                    background-position: center;
+                    position: relative;
+                    overflow: hidden;
+
+                    &::after {
+                        content: "";
+                        position: absolute;
+                        height: 0;
+                        width: 200%;
+                        left: 50%;
+                        top: 50%;
+                        transform: translate(-50%, -50%) rotate(-45deg);
+                        background-color: rgba(255, 255, 255, 0.3);
+                        transition: all 0.6s;
+                    }
+
+                    &:hover::after {
+                        transition: all 0.6s linear;
+                        height: 200%;
+                        background-color: transparent;
+                    }
                 }
 
                 .testimonial-ratings {
@@ -629,6 +717,7 @@ ul {
         a {
             text-decoration: none;
             color: var(--secondary-text);
+            transition: all 0.5s;
 
             &:hover {
                 color: var(--accent-color);
@@ -693,6 +782,7 @@ ul {
 .navbar-light .navbar-nav .nav-link {
     color: var(--nav-link-color);
     margin-inline: 0.5rem;
+    transition: all 0.5s;
 }
 
 .navbar-light .navbar-nav .nav-link.dropdown-toggle {
@@ -907,8 +997,28 @@ ul {
     }
 
     #aboutUs {
-        .left-col-image-container img {
-            width: 100%;
+        .left-col-image-container {
+            img {
+                width: 100%;
+            }
+
+            .left-col-label-one {
+                min-width: 250px;
+                right: 0%;
+            }
+        }
+    }
+
+    @keyframes animated-bubble {
+        0% {
+            right: 0%;
+        }
+        50% {
+            right: -10%;
+        }
+
+        100% {
+            right: 0%;
         }
     }
 
