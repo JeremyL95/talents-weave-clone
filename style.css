@@ -821,6 +821,24 @@ ul {
 }
 /* end of privacy policy */
 
+/* start of terms and conditions */
+#termsAndConditions {
+    h3 {
+        font-size: 1.5rem;
+        color: var(--primary-color);
+        font-weight: 700;
+    }
+
+    p {
+        color: var(--default-text);
+    }
+
+    li {
+        margin-left: 1rem;
+    }
+}
+/* end of terms and conditions */
+
 @media only screen and (max-width: 767px) {
     section {
         padding-block: 3.125rem;
