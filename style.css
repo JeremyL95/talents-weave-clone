@@ -804,6 +804,23 @@ ul {
 }
 /* end of navbar */
 
+/* start of privacy policy */
+#privacyPolicy {
+    h1 {
+        font-size: 2.25rem;
+        font-weight: 700;
+    }
+
+    p {
+        color: var(--default-text);
+    }
+
+    h3 {
+        font-size: 1.5rem;
+    }
+}
+/* end of privacy policy */
+
 @media only screen and (max-width: 767px) {
     section {
         padding-block: 3.125rem;
