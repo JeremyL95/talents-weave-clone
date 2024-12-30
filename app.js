@@ -31,8 +31,8 @@ document.getElementById('advantages').innerHTML = advantageContainer;
 progressBar.forEach((progressBar) => {
     progressBarContainer += `
         <div id="progressBar${progressBar.id}" class="progress-bar-container">
-            <div class="progress-bar-icon" style="width: 20%">
-                i
+            <div class="progress-bar-icon">
+                ${progressBar.icon}
             </div>
 
             <div class="" style="width: 80%">
@@ -98,6 +98,14 @@ careerPackages.forEach((careerPackage) => {
             </div>`
 });
 document.getElementById('careerCards').innerHTML = careerPackagesContainer;
+
+// manually grab and assign function to button after done dynamic rendering
+let careerCardBtnApply = document.querySelectorAll('.career-card .btn-apply');
+
+for (let i = 0; i < careerCardBtnApply.length; i++) {
+    careerCardBtnApply[i].addEventListener('click', applyNow);
+}
+
 
 // our team
 ourTeams.forEach((ourTeam) => {
@@ -181,15 +189,9 @@ new Swiper('.swiper', {
 });
 
 for (let i = 0; i < btnApply.length; i++) {
-    btnApply[i].addEventListener("click", () => {
-        location.href = 'application-form.html';
-    });
+    btnApply[i].addEventListener("click", applyNow);
 }
 
 function applyNow() {
     location.href = 'application-form.html';
 }
-
-// footer
-const currentYear = new Date().getFullYear();
-document.getElementById('copyright').innerText = `Copyright © ${currentYear} Talents Weave. All Rights Reserved.`

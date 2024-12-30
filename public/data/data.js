@@ -35,14 +35,14 @@ export const progressBar = [
     {
         id: 1,
         title: 'Fully Work From Home',
-        icon: '',
+        icon: '<i class="fa-solid fa-house fa-customize"></i>',
         filled: 100,
         max_fill: 100
     },
     {
         id: 2,
         title: 'Worldwide Colleagues',
-        icon: '',
+        icon: '<i class="fa-solid fa-globe fa-customize"></i>',
         filled: 85,
         max_fill: 100
     },
@@ -50,7 +50,7 @@ export const progressBar = [
     {
         id: 3,
         title: 'Growth Opportunities',
-        icon: '',
+        icon: '<i class="fa-solid fa-seedling fa-customize"></i>',
         filled: 93,
         max_fill: 100
     }

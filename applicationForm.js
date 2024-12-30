@@ -149,6 +149,3 @@ selectedOption.addEventListener('click', toggleDialCodeDropdown);
 searchBox.addEventListener('input', searchCountryByName);
 
 form.addEventListener('submit', validateForm);
-
-const currentYear = new Date().getFullYear();
-document.getElementById('copyright').innerText = `Copyright © ${currentYear} Talents Weave. All Rights Reserved.`

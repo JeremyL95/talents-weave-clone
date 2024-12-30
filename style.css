@@ -229,35 +229,13 @@ ul {
 
 /* Start of progress bar */
 .combined-image-container {
-    position: relative;
-    height: 320px;
     padding-inline: 1rem;
-
-    .combined-image {
-        position: absolute;
-    }
 
     .combined-image img {
         width: 100%;
-        height: 250px;
-        border-radius: 20px;
+        /* padding-inline: 2rem; */
+        aspect-ratio: 1/1;
         object-fit: contain;
-    }
-
-    .combined-image-1 {
-        z-index: 99;
-        left: 0;
-    }
-
-    .combined-image-2 {
-        padding-left: 6rem;
-        z-index: 98;
-    }
-
-    .combined-image-3 {
-        padding-top: 2rem;
-        z-index: 99;
-        right: 0;
     }
 }
 
@@ -284,6 +262,21 @@ ul {
         padding: 1rem;
         border: 1px solid var(--hero-bubble-border);
         border-radius: 50%;
+
+        .fa-customize {
+            color: var(--gradient-color);
+        }
+    }
+
+    &:hover {
+        .progress-bar-icon {
+            transition: all 0.6s linear;
+            background-image: linear-gradient(180deg, var(--accent-color) 0%, var(--gradient-color) 100%);
+
+            .fa-customize {
+                color: var(--secondary-text);
+            }
+        }
     }
 
     .progress-bar-top {
@@ -317,12 +310,6 @@ ul {
             background-image: linear-gradient(180deg, var(--accent-color) 0%, var(--gradient-color) 100%);
             border-radius: 20px;
         }
-    }
-}
-
-.progress-bar-container:hover {
-    .progress-bar-icon {
-        background-image: linear-gradient(180deg, var(--accent-color) 0%, var(--gradient-color) 100%);
     }
 }
 /* End of progress bar */
@@ -457,20 +444,34 @@ ul {
         background-repeat: no-repeat;
         background-position: center;
         border-radius: 17px;
+        padding-inline: 1rem;
         object-fit: contain;
-        transition: all 0.25 ease-in;
+        overflow: hidden;
+
+        &::after {
+            content: "";
+            position: absolute;
+            height: 0;
+            width: 200%;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%) rotate(-45deg);
+            background-color: rgba(255, 255, 255, 0.3);
+            z-index: 1;
+        }
 
         .team-content {
-            /* width: 300px; */
+            width: calc(100% - 2rem);
             position: absolute;
             bottom: -30%;
-            margin: 1rem;
+            margin-block: 1rem;
             padding: 1rem;
             border-radius: 10px;
             color: var(--secondary-text);
             background-color: var(--primary-color);
             opacity: 0%;
             z-index: 99;
+            transition: all 0.25s linear;
 
             .team-name {
                 font-size: 1.25rem;
@@ -482,6 +483,12 @@ ul {
         }
 
         &:hover {
+            &::after {
+                transition: all 0.6s linear;
+                height: 250%;
+                background-color: transparent;
+            }
+
             .team-content {
                 bottom: 0%;
                 opacity: 90%;
@@ -647,6 +654,11 @@ ul {
     );
     background-size: 200% auto;
     margin-block: 2rem;
+    transition: all 0.3s;
+
+    &:hover {
+        background-position: right center;
+    }
 }
 
 /* start of navbar */
@@ -683,6 +695,23 @@ ul {
     margin-inline: 0.5rem;
 }
 
+.navbar-light .navbar-nav .nav-link.dropdown-toggle {
+    color: var(--primary-text);
+}
+
+.dropdown-menu {
+    background-image: linear-gradient(180deg, var(--accent-color) 0%, var(--gradient-color) 100%);
+
+    .dropdown-item {
+        color: var(--secondary-text);
+
+        &:hover {
+            background-color: transparent;
+            color: var(--primary-text);
+        }
+    }
+}
+
 .navbar-collapse {
     justify-content: flex-end;
 }
@@ -690,6 +719,88 @@ ul {
 .dropdown-menu[data-bs-popper] {
     left: unset;
     right: 0;
+}
+
+#nav-icon4 {
+    width: 30px;
+    height: 30px;
+    position: relative;
+    margin: 0 auto;
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+    -webkit-transition: 0.5s ease-in-out;
+    -moz-transition: 0.5s ease-in-out;
+    -o-transition: 0.5s ease-in-out;
+    transition: 0.5s ease-in-out;
+    cursor: pointer;
+}
+
+#nav-icon4 span {
+    display: block;
+    position: absolute;
+    height: 2px;
+    width: 100%;
+    background: var(--secondary-text);
+    border-radius: 8px;
+    opacity: 1;
+    left: 0;
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+    -webkit-transition: 0.25s ease-in-out;
+    -moz-transition: 0.25s ease-in-out;
+    -o-transition: 0.25s ease-in-out;
+    transition: 0.25s ease-in-out;
+}
+
+#nav-icon4 span:nth-child(1) {
+    top: 6px;
+    -webkit-transform-origin: left center;
+    -moz-transform-origin: left center;
+    -o-transform-origin: left center;
+    transform-origin: left center;
+}
+
+#nav-icon4 span:nth-child(2) {
+    top: 14px;
+    -webkit-transform-origin: left center;
+    -moz-transform-origin: left center;
+    -o-transform-origin: left center;
+    transform-origin: left center;
+}
+
+#nav-icon4 span:nth-child(3) {
+    top: 22px;
+    -webkit-transform-origin: left center;
+    -moz-transform-origin: left center;
+    -o-transform-origin: left center;
+    transform-origin: left center;
+}
+
+#nav-icon4.open span:nth-child(1) {
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    transform: rotate(45deg);
+    top: 4px;
+    left: 5px;
+}
+
+#nav-icon4.open span:nth-child(2) {
+    width: 0%;
+    opacity: 0;
+}
+
+#nav-icon4.open span:nth-child(3) {
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    -o-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+    top: 25px;
+    left: 5px;
 }
 /* end of navbar */
 
@@ -727,8 +838,7 @@ ul {
 
         .right-col {
             .right-col-image-container {
-                /* display: flex;
-                justify-content: center; */
+                margin-top: 3rem;
 
                 img {
                     width: 200px;
