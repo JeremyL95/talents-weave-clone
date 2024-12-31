@@ -30,6 +30,7 @@
 body {
     max-width: 1500px;
     margin: 0 auto;
+    position: relative;
 }
 
 section {
@@ -44,6 +45,17 @@ section {
 ul {
     list-style-type: none;
     padding-left: 0;
+}
+
+#follower {
+    content: "";
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: var(--accent-color);
+    position: absolute;
+    z-index: 99;
+    pointer-events: none;
 }
 
 .section-label {
@@ -791,6 +803,7 @@ ul {
 
 .dropdown-menu {
     background-image: linear-gradient(180deg, var(--accent-color) 0%, var(--gradient-color) 100%);
+    z-index: 98;
 
     .dropdown-item {
         color: var(--secondary-text);
@@ -946,6 +959,10 @@ ul {
         font-size: 1rem;
     }
 
+    #follower {
+        display: none;
+    }
+
     #hero {
         .left-col {
             .hero-cta-container {
@@ -1032,7 +1049,7 @@ ul {
         padding: 1rem;
 
         .progress-bar-title {
-            font-size: 1.125rem;
+            font-size: 1rem;
         }
     }
 

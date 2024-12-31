@@ -74,8 +74,6 @@ progressBarCounter.forEach(progressBarCounterNode => {
     counterAnim();
 })
 
-
-
 // career packages
 careerPackages.forEach((careerPackage) => {
     careerPackagesContainer += `<div class="career-card col-12 col-md-4 my-2 ${careerPackage.recommended ? 'recommended' : ''}"
@@ -129,7 +127,6 @@ let careerCardBtnApply = document.querySelectorAll('.career-card .btn-apply');
 for (let i = 0; i < careerCardBtnApply.length; i++) {
     careerCardBtnApply[i].addEventListener('click', applyNow);
 }
-
 
 // our team
 ourTeams.forEach((ourTeam) => {
@@ -248,7 +245,7 @@ function applyNow() {
 
 function numberWithCommas(number) {
     number = number.toString();
-    var pattern = /(-?\d+)(\d{3})/;
+    let pattern = /(-?\d+)(\d{3})/;
     while (pattern.test(number))
         number = number.replace(pattern, "$1,$2");
     return number;
