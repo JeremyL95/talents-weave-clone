@@ -48,6 +48,7 @@ ul {
 }
 
 #follower {
+    display: none;
     content: "";
     width: 8px;
     height: 8px;
@@ -1067,5 +1068,11 @@ ul {
 @media only screen and (min-width: 992px) {
     .footer-container {
         gap: 4rem;
+    }
+}
+
+@media only screen and (min-width: 1025px) {
+    #follower {
+        display: block;
     }
 }
